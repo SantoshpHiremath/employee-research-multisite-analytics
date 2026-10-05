@@ -8,18 +8,16 @@ representative can hide real, important between-site differences (or
 worse, manufacture a fake overall trend from mixing populations that
 shouldn't be combined without disaggregation).
 
-This module does two honest things, at two different levels of rigor:
+This module checks comparability at two levels of rigor:
 
 1. A real, standard one-way ANOVA per construct testing whether sites
    differ significantly -- the correct question to ask BEFORE pooling
    ("do these sites actually differ?"), not skipped in favor of jumping
    straight to an overall mean.
-2. A disclosed, deliberately-not-oversold discussion of full measurement
-   invariance testing (the gold-standard multi-group CFA technique for
-   checking whether a scale means the same thing across groups) -- named
-   explicitly as a real technique this project does NOT implement, rather
-   than silently doing the simpler ANOVA and letting a reader assume the
-   more rigorous check was done.
+2. A scope note on full measurement invariance testing (the
+   gold-standard multi-group CFA technique for checking whether a scale
+   means the same thing across groups), identified as the natural next
+   step beyond the ANOVA and practical-gap checks implemented here.
 """
 from __future__ import annotations
 
@@ -102,13 +100,11 @@ def pairwise_site_gaps(df_scored: pd.DataFrame, construct_score_col: str, min_ga
 
 MEASUREMENT_INVARIANCE_NOTE = (
     "This project checks whether site MEANS differ (one-way ANOVA) and "
-    "flags practically large gaps -- it does NOT test full measurement "
-    "invariance (configural/metric/scalar invariance via multi-group "
-    "confirmatory factor analysis), which is the more rigorous, "
+    "flags practically large gaps. Full measurement invariance testing "
+    "(configural/metric/scalar invariance via multi-group "
+    "confirmatory factor analysis) is the natural next step: the "
     "gold-standard check for whether a survey scale means the same thing "
     "to respondents across groups before comparing their means at all. "
-    "That technique requires a larger per-site sample and CFA tooling "
-    "beyond this project's scope, and is named here explicitly so this "
-    "is not mistaken for a more rigorous check than what's actually "
-    "implemented."
+    "It requires a larger per-site sample and CFA tooling, and is "
+    "planned as an extension."
 )

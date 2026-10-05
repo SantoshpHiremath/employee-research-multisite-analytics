@@ -1,6 +1,6 @@
 """
 Simulates multi-site survey data collection: generates realistic (but
-synthetic -- not real Siemens or any company's employee data) Likert
+synthetic) Likert
 responses across several factory sites, with deliberately injected
 real-world data-collection problems:
 
@@ -48,7 +48,7 @@ def _sample_response(true_score: float, rng: np.random.Generator, item_noise_std
     construct score (not just the site mean -- see
     _sample_respondent_true_score), rounded and clipped to the valid 1-5
     range. item_noise_std=0.55 is deliberately smaller than the earlier
-    (buggy) version's 0.9: see the "Honest finding" section in README --
+    (buggy) version's 0.9: see the "Results" section in README --
     the first version sampled every item independently around the SITE
     mean with no shared respondent-level signal, which made items
     essentially uncorrelated (Cronbach's alpha near zero). Modeling a
@@ -121,7 +121,7 @@ def generate_responses(seed: int = 42) -> pd.DataFrame:
                     # items, making them anti-correlate instead of
                     # correlate -- this was a real bug, caught via
                     # Cronbach's alpha coming out near zero/negative (see
-                    # README's "Honest finding").
+                    # README's "Results" section).
                     if item.reverse_coded:
                         inverted_true_score = LIKERT_MAX + LIKERT_MIN - true_score
                         raw_response = _sample_response(inverted_true_score, rng)

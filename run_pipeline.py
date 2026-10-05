@@ -3,8 +3,8 @@ End-to-end demo: simulates multi-site survey collection, cleans the
 responses (straightliner + low-completion removal), scores the three
 constructs, reports internal-consistency reliability (Cronbach's alpha),
 and runs the cross-site comparability checks (ANOVA + practical-gap
-flagging) -- printing an honest summary, including the reliability bands
-and the explicit measurement-invariance disclosure.
+flagging) -- printing a summary, including the reliability bands
+and the measurement-invariance scope note.
 """
 import os
 
@@ -70,7 +70,7 @@ def main():
         print("  (none)")
 
     print("\n" + "-" * 70)
-    print("Measurement invariance disclosure:")
+    print("Measurement invariance scope note:")
     print(MEASUREMENT_INVARIANCE_NOTE)
 
     print("\n" + "=" * 70)

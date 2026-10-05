@@ -1,8 +1,8 @@
 """
 Data-quality checks for the raw survey responses: straightlining
 detection (via reverse-coded item consistency) and missingness handling
--- the "assist in cleaning" part of the posting's workflow, done with a
-real, defensible method rather than an arbitrary rule.
+-- the cleaning step of the workflow, done with a defensible method
+rather than an arbitrary rule.
 """
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def respondent_completion_rate(df: pd.DataFrame) -> pd.Series:
 
 def clean_responses(df: pd.DataFrame, min_completion_rate: float = 0.75) -> pd.DataFrame:
     """Removes straightliners and respondents below a minimum completion
-    rate -- both real, disclosed, adjustable exclusion criteria, applied
+    rate -- both adjustable exclusion criteria, applied
     BEFORE scoring, not after (so excluded respondents never silently
     influence construct scores).
     """

@@ -6,12 +6,8 @@ to design a survey construct, since a single item is noisy and can't be
 checked for internal consistency, while multiple items measuring the same
 underlying construct can be (via Cronbach's alpha, see analysis.py).
 
-Built for a research-design + multi-site data collection use case (Siemens
-"Working Student Data Analyst" posting, People & Organization team): the
-posting's first task is "support the development and adaptation of
-research designs for specific user settings" -- this module IS that
-research design, made concrete and inspectable rather than described in
-the abstract.
+Built for a research-design + multi-site data collection use case: this
+module is the research design, made concrete and inspectable.
 """
 from __future__ import annotations
 

@@ -46,11 +46,11 @@ def cronbachs_alpha(item_matrix: pd.DataFrame) -> float:
     item_matrix passed in must already be reverse-coding-adjusted (see
     apply_reverse_coding) -- computing alpha on raw, un-adjusted items
     was the exact mistake that originally produced a near-zero/negative
-    alpha during this project's development (see README's "Honest
-    finding" section) before being traced to a reverse-coding bug, not a
+    alpha during this project's development (see README's "Results"
+    section) before being traced to a reverse-coding bug, not a
     genuinely unreliable construct. Rows with any missing value are
     dropped for this calculation (listwise deletion) -- a standard,
-    simple, disclosed choice; more sophisticated missing-data handling
+    simple choice; more sophisticated missing-data handling
     exists but isn't warranted given this dataset's low (~3%) item-level
     missingness.
     """
